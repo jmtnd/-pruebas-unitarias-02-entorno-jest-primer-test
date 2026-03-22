@@ -15,7 +15,7 @@ describe("GET /tareas", () => {
 });
 
 describe("POST /tareas", () => {
-  it("Debe crear una tarea cuando se envia titulo y descripcion", async () => {
+  it("Debe crear una tarea cuando se envia titulo y descripcion (caso feliz)", async () => {
     const nuevaTarea = {
       titulo: "Aprender mocks",
       descripcion: "Estudiar mocks y stubs en Jest"
@@ -30,7 +30,7 @@ describe("POST /tareas", () => {
     expect(response.body.completada).toBe(false);
   });
 
-  it("Debe responder con 400 si falta algun campo obligatorio", async () => {
+  it("Debe responder con 400 si falta algun campo obligatorio (caso de error)", async () => {
     const tareaInvalida = {
       titulo: "Tarea sin descripcion"
     };
